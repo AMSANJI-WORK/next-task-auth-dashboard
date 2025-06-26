@@ -15,3 +15,8 @@
   border-radius: 6px;
   font-size: 1rem;
 }
+
+.inputField:invalid:focus,
+.inputField:invalid:not(:placeholder-shown) {
+  border-color: red;
+}

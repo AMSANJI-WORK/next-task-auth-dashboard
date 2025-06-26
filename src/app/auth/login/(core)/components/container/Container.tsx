@@ -39,7 +39,11 @@ const PageLoginContainer = () => {
           required
           type="tel"
           name="phone"
-          placeholder="Enter phone number"
+          placeholder="Phone number with 7 to 15 digits"
+          pattern="^[0-9]{7,15}$"
+          min="7"
+          max="15"
+          title="Phone number must be 7–15 digits, no symbols or spaces"
         >
           Phone Number
         </AppInput>
