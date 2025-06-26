@@ -1,7 +1,7 @@
 "use client";
 import React, { useActionState, useEffect } from "react";
 import styles from "./Header.module.scss";
-import { handleLogout } from "@/app/auth/logout/logout.actions";
+import { handleLogout } from "@/app/auth/(logout)/logout.actions";
 import { useToast } from "../toast/Toast";
 import { useRouter } from "next/navigation";
 const states = {
