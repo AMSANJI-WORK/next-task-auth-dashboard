@@ -1,21 +1,36 @@
 "use client";
-import React, { useActionState } from "react";
+import React, { useActionState, useEffect } from "react";
 import styles from "./Container.module.scss";
 import AppInput from "@/app/(application)/components/input/Input";
 import { handleLogin } from "../../login.actions";
-import { ApiResponse } from "@/app/(application)/(http)/http.model";
-import { User } from "@/app/(dashboard)/model/users.model";
+import { UserSecure } from "@/app/dashboard/model/users.model";
+import { useToast } from "@/app/(application)/components/toast/Toast";
+import { useRouter } from "next/navigation";
 
 const states = {
   success: false,
-  data: null as ApiResponse<User> | null,
+  data: null as UserSecure | null,
   message: "",
 };
 
 export type FormState = typeof states;
 
 const PageLoginContainer = () => {
+  const router = useRouter();
+  const { addToast } = useToast();
   const [state, action, pending] = useActionState(handleLogin, states);
+
+  useEffect(() => {
+    if (!state.message) return;
+    addToast({
+      message: state.message,
+      type: state.success ? "success" : "error",
+    });
+    if (state.success) {
+      localStorage.selected = JSON.stringify(state.data);
+      router.replace("/");
+    }
+  }, [state]);
   return (
     <div className={styles.loginPage}>
       <form action={action} className={styles.loginForm}>

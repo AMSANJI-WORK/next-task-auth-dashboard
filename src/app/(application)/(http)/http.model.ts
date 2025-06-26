@@ -1,5 +1,5 @@
 export type ApiResponse<T = any> = {
-  results: T[];
+  results: [T];
 };
 
 export type ApiError = {
