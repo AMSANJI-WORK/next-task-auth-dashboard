@@ -1,0 +1,40 @@
+@import "../../../(application)/resources/mixins.scss";
+
+.wrapper {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 1rem 1.5rem;
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.image {
+  border-radius: 100%;
+}
+
+.imageContainer {
+  @include flex__inline;
+  gap: 1rem;
+  margin: auto;
+}
+
+.item {
+  @include flex__column;
+  gap: 0.5rem;
+
+  .label {
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+}

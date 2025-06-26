@@ -1,0 +1,16 @@
+@import "../../../(application)/resources/mixins.scss";
+
+.label__container {
+  @include flex__column;
+  gap: 12px;
+}
+
+.label__title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.label__value {
+  font-size: 16px;
+}

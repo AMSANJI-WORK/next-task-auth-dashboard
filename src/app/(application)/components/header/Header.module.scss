@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  align-items: center;
+  padding-inline: 1rem;
+  z-index: 10;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+
+  h3 {
+    font-size: 24px;
+  }
+}
