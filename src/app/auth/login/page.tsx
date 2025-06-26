@@ -1,5 +1,5 @@
 import React from "react";
-import PageLoginContainer from "./components/container/Container";
+import PageLoginContainer from "./(core)/components/container/Container";
 
 const LoginPage = () => {
   return <PageLoginContainer />;
